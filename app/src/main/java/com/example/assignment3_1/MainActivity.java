@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //View Objects
     private Button buttonScan;
-    private TextView textViewName, textViewAddress;
+    private TextView etName, etAddress;
 
     //qr code scanner object
     private IntentIntegrator qrScan;
@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //View objects
         buttonScan = (Button) findViewById(R.id.buttonScan);
-        textViewName = (TextView) findViewById(R.id.textViewName);
-        textViewAddress = (TextView) findViewById(R.id.textViewAddress);
+        etName = (TextView) findViewById(R.id.etName);
+        etAddress = (TextView) findViewById(R.id.etAddress);
 
         //intializing scan object
         qrScan = new IntentIntegrator(this);
@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //converting the data to json
                     JSONObject obj = new JSONObject(result.getContents());
                     //setting values to textviews
-                    textViewName.setText(obj.getString("name"));
-                    textViewAddress.setText(obj.getString("address"));
+                    etName.setText(obj.getString("title"));
+                    etAddress.setText(obj.getString("address"));
                 } catch (JSONException e) {
                     e.printStackTrace();
                     //if control comes here
