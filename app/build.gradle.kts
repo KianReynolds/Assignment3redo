@@ -29,16 +29,16 @@ android {
 }
 
 dependencies {
-    implementation(fileTree(dir = "libs", include = listOf("*.jar")))
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    androidTestImplementation("com.android.support.test.espresso:espresso-core:2.2.2") {
+    androidTestImplementation("com.android.support.test.espresso:espresso-core:3.0.2") {
         exclude(group = "com.android.support", module = "support-annotations")
     }
 
     implementation("androidx.appcompat:appcompat:1.7.0")
 
-    testImplementation("junit:junit:4.12")
+    testImplementation("junit:junit:4.13.2")
 
-    implementation("com.journeyapps:zxing-android-embedded:3.4.0")
+    implementation("com.journeyapps:zxing-android-embedded:4.3.0")
 
 }
